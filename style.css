@@ -1,0 +1,88 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: #111;
+	font: 400 1em/1.4 Open Sans,sans-serif;
+}
+
+.wrapper {
+	width: 90%;
+	height: 90%;
+	display: flex;
+	justify-content: space-around;
+	align-content: flex-start;
+	align-items: center;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	background: #222;
+}
+
+.el {
+	flex-basis: 240px;
+	height: 400px;
+	flex-grow: 1;
+	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.el:hover {
+	background: #2c2c2c;
+}
+
+[data-tooltip]::after {
+	content: attr(data-tooltip);
+	opacity: 1;
+	transition: 1s;
+	pointer-events: none;
+	font-size: 14px;
+	color: #ccc;
+	position: absolute;
+	top: 40px;
+	left: 120px;
+}
+
+[data-tooltip]:hover::after {
+	opacity: 1;
+}
+
+[data-tooltip] {
+    position: relative; /* Относительное позиционирование */ 
+   }
+   [data-tooltip]::after {
+    content: attr(data-tooltip); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 100%; /* Ширина подсказки */
+    min-height: 70px;
+    left: 0; top: 0; /* Положение подсказки */
+    background: #3989c9; /* Синий цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 0.5em 1em; /* Поля вокруг текста */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 1s; /* Время появления подсказки */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   } 
+   [data-tooltip]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+    top: 45%; /* Положение подсказки */
+   }
