@@ -29,7 +29,7 @@ body {
 	background: #222;
 }
 
-@media screen and(max-width: 990px) {
+@media screen and (max-width: 990px) {
 	.wrapper {
 		flex-direction: column;
 	}
